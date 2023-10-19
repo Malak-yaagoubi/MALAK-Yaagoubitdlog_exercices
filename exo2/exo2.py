@@ -1,30 +1,32 @@
-"""
-Complete the solution so that it returns true if the first argument(string)
-passed in ends with the 2nd argument (also a string).
+def solution(string, ending):
+    return string.endswith(ending)
 
-Examples:
-
-    solution('abc', 'bc') # returns true
-    solution('abc', 'd') # returns false
-"""
-
-"""
-Create unit test using those cases:
+# Unit tests
 fixed_tests_True = (
-    ( "samurai", "ai"    ),
-    ( "ninja",   "ja"    ),
-    ( "sensei",  "i"     ),
-    ( "abc",     "abc"   ),
-    ( "abcabc",  "bc"    ),
-    ( "fails",   "ails"  ),
+    ("samurai", "ai"),
+    ("ninja", "ja"),
+    ("sensei", "i"),
+    ("abc", "abc"),
+    ("abcabc", "bc"),
+    ("fails", "ails"),
 )
 
 fixed_tests_False = (
-    ( "sumo",    "omo"   ),
-    ( "samurai", "ra"    ),
-    ( "abc",     "abcd"  ),
-    ( "ails",    "fails" ),
-    ( "this",    "fails" ),
-    ( "spam",    "eggs"  )
+    ("sumo", "omo"),
+    ("samurai", "ra"),
+    ("abc", "abcd"),
+    ("ails", "fails"),
+    ("this", "fails"),
+    ("spam", "eggs")
 )
-"""
+
+for test_case in fixed_tests_True:
+    input_string, ending_string = test_case
+    output = solution(input_string, ending_string)
+    print(f"Input: {input_string}, Ending: {ending_string}, Output: {output}, Expected: True")
+    
+for test_case in fixed_tests_False:
+    input_string, ending_string = test_case
+    output = solution(input_string, ending_string)
+    print(f"Input: {input_string}, Ending: {ending_string}, Output: {output}, Expected: False")
+
